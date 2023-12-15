@@ -17,7 +17,7 @@ directories = ['images_EDA/hamburger', 'images_EDA/hotdog', 'images_EDA/pasta', 
 def main():
     st.title("Image Classification App")
     
-    menu = ["Train Model", "Show Images", "Show Graph"]
+    menu = ["Show Images", "Train Model","Show Graph"]
     choice = st.sidebar.selectbox("Menu", menu)
 
     if choice == "Train Model":
