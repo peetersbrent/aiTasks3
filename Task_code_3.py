@@ -25,7 +25,7 @@ def main():
         st.subheader("Train Model")
         epochs = st.number_input('Enter number of epochs (min: 1, max: 30)', min_value=1, max_value=30, value=20)
         if st.button("Train"):
-            history = train_model(epochs)
+            model_new, history = train_model(epochs)
             st.write("Model trained successfully!")
             st.pyplot(plot_error(history))
 
