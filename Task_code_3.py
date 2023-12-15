@@ -84,7 +84,7 @@ def train_model(epochs):
                             validation_data = validation_set,
                             epochs = epochs)
 
-    return history
+    return model_new, history
 
 
 def show_images():
