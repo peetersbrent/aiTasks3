@@ -163,8 +163,8 @@ def plot_error(history):
     # Adjust the spacing between subplots
     fig.tight_layout()
 
-    # Return the figure
-    return fig
+    # Show the figure in Streamlit
+    st.pyplot(fig)
 
 if __name__ == "__main__":
     main()
