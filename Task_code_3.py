@@ -30,7 +30,7 @@ def main():
             st.write("Model trained successfully!")
     
         if st.button("Plot Error"):
-            st.pyplot(plot_error())
+            plot_error(history)
 
     elif choice == "Show Images":
         st.subheader("Show Images")
