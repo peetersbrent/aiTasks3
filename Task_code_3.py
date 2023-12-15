@@ -134,7 +134,6 @@ def show_graph():
     # Create a bar plot of the image counts
     fig, ax = plt.subplots()
     ax.bar(counts.keys(), counts.values())
-    ax.set_xlabel('Directory')
     ax.set_ylabel('Number of Images')
 
     # Show the plot in Streamlit
