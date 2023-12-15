@@ -8,6 +8,7 @@ from tensorflow.keras import optimizers
 from tensorflow.keras import layers
 from keras.utils import image_dataset_from_directory
 import os
+import scipy
 from PIL import Image
 from keras.preprocessing.image import ImageDataGenerator
 
