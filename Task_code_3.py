@@ -20,11 +20,7 @@ def main():
     menu = ["Home", "Train Model", "Show Images", "Show Graph"]
     choice = st.sidebar.selectbox("Menu", menu)
 
-    if choice == "Home":
-        st.subheader("Home")
-        st.write("Welcome to the Image Classification App!")
-    
-    elif choice == "Train Model":
+    if choice == "Train Model":
         st.subheader("Train Model")
         epochs = st.number_input('Enter number of epochs (min: 1, max: 30)', min_value=1, max_value=30, value=20)
         if st.button("Train"):
