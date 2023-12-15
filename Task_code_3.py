@@ -89,7 +89,7 @@ def show_images():
     directories = ['images_EDA/hamburger', 'images_EDA/hotdog', 'images_EDA/pasta', 'images_EDA/pizza', 'images_EDA/salad']
 
     # Initialize the figure
-    plt.figure(figsize=(10,10))
+    fig, axs = plt.subplots(len(directories), 3, figsize=(10,10))
 
     # Loop over the directories
     for directory_index, directory in enumerate(directories):
@@ -105,15 +105,12 @@ def show_images():
             img = Image.open(os.path.join(directory, image))
             
             # Plot the image
-            plt.subplot(len(directories), 3, directory_index * 3 + image_index + 1)
-            plt.xticks([])
-            plt.yticks([])
-            plt.grid(False)
-            plt.imshow(img)  # Display the image in its original colors
-            plt.xlabel(f"{os.path.basename(directory)}:{image}")
+            axs[directory_index, image_index].imshow(img)  # Display the image in its original colors
+            axs[directory_index, image_index].axis('off')  # Hide the axis
+            axs[directory_index, image_index].set_title(f"{os.path.basename(directory)}:{image}")
 
-    # Show the plot
-    plt.show()
+    # Show the plot in Streamlit
+    st.pyplot(fig)
 
 
 def show_graph():
