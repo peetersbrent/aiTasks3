@@ -109,6 +109,7 @@ def show_images():
             axs[directory_index, image_index].axis('off')  # Hide the axis
             axs[directory_index, image_index].set_title(f"{os.path.basename(directory)}:{image}")
 
+    st.write("Bekijk hier 3 afbeeldingen per categorie.")
     # Show the plot in Streamlit
     st.pyplot(fig)
 
