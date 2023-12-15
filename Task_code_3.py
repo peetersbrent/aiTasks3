@@ -137,6 +137,7 @@ def show_graph():
     ax.bar(counts.keys(), counts.values())
     ax.set_ylabel('Number of Images')
 
+    st.write("Bekijk hier hoeveel afbeeldingen er per categorie zijn.")
     # Show the plot in Streamlit
     st.pyplot(fig)
 
