@@ -25,7 +25,7 @@ def main():
 
     if choice == "Train Model":
         st.subheader("Train Model")
-        epochs = st.number_input('Enter number of epochs (min: 5, max: 30)', min_value=5, max_value=30, value=20)
+        epochs = st.number_input('Enter number of epochs (min: 5, max: 20)', min_value=5, max_value=20, value=20)
         
         if st.button("Train"):
             model_new, history2 = train_model(epochs)
