@@ -132,10 +132,13 @@ def show_graph():
         counts[os.path.basename(directory)] = len(images)
 
     # Create a bar plot of the image counts
-    plt.bar(counts.keys(), counts.values())
-    plt.xlabel('Directory')
-    plt.ylabel('Number of Images')
-    plt.show()
+    fig, ax = plt.subplots()
+    ax.bar(counts.keys(), counts.values())
+    ax.set_xlabel('Directory')
+    ax.set_ylabel('Number of Images')
+
+    # Show the plot in Streamlit
+    st.pyplot(fig)
 
 def plot_error(history):
     # Create subplots
