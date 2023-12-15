@@ -21,19 +21,19 @@ def main():
     choice = st.sidebar.selectbox("Menu", menu)
 
     model_new = None
-    history = None
+    history2 = None
 
     if choice == "Train Model":
         st.subheader("Train Model")
         epochs = st.number_input('Enter number of epochs (min: 5, max: 30)', min_value=5, max_value=30, value=20)
         
         if st.button("Train"):
-            model_new, history = train_model(epochs)
+            model_new, history2 = train_model(epochs)
             st.write("Model trained successfully!")
     
         if st.button("Plot Error"):
-            if history is not None:
-                plot_error(history)
+            if history2 is not None:
+                plot_error(history2)
             else:
                 st.write("No training history available.")
 
@@ -83,11 +83,11 @@ def train_model(epochs):
                                                            batch_size = 32,
                                                            class_mode = 'categorical')
 
-    history = model_new.fit(training_set,
+    history2 = model_new.fit(training_set,
                             validation_data = validation_set,
                             epochs = epochs)
 
-    return model_new, history
+    return model_new, history2
 
 
 def show_images():
@@ -130,18 +130,18 @@ def show_graph():
     st.write("Bekijk hier hoeveel afbeeldingen er per categorie zijn.")
     st.pyplot(fig)
 
-def plot_error(history):
+def plot_error(history2):
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10,5))
 
-    ax1.plot(history.history['loss'], label='training loss')
-    ax1.plot(history.history['val_loss'], label='validation loss')
+    ax1.plot(history2.history['loss'], label='training loss')
+    ax1.plot(history2.history['val_loss'], label='validation loss')
     ax1.set_title('Loss curves')
     ax1.set_xlabel('Epoch')
     ax1.set_ylabel('Loss')
     ax1.legend()
 
-    ax2.plot(history.history['accuracy'], label='training accuracy')
-    ax2.plot(history.history['val_accuracy'], label='validation accuracy')
+    ax2.plot(history2.history['accuracy'], label='training accuracy')
+    ax2.plot(history2.history['val_accuracy'], label='validation accuracy')
     ax2.set_title('Accuracy curves')
     ax2.set_xlabel('Epoch')
     ax2.set_ylabel('Accuracy')
